@@ -1,14 +1,8 @@
 import {
   AppBar,
   Box,
-  Button,
-  Card,
-  CardContent,
-  Chip,
   Container,
   CssBaseline,
-  Divider,
-  Stack,
   Typography,
 } from '@mui/material'
 import './App.css'
