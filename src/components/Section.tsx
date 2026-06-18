@@ -22,9 +22,12 @@ export function Section({
       aria-labelledby={`${id}-heading`}
     >
       <Container>
-        <Typography id={`${id}-heading`} variant="h2" className="section-title">
-          {title}
-        </Typography>
+        <Box className="section-heading">
+          <span className="section-kicker" aria-hidden="true" />
+          <Typography id={`${id}-heading`} variant="h2" className="section-title">
+            {title}
+          </Typography>
+        </Box>
         {children}
       </Container>
     </Box>

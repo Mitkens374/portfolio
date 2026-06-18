@@ -1,13 +1,16 @@
 :root {
-  --portfolio-text: #172033;
-  --portfolio-muted: #5d6678;
-  --portfolio-primary: #2557d6;
-  --portfolio-primary-soft: #e8efff;
-  --portfolio-border: #e1e5ec;
+  --portfolio-text: #171725;
+  --portfolio-muted: #676678;
+  --portfolio-primary: #5b4ff7;
+  --portfolio-primary-dark: #3d32cc;
+  --portfolio-primary-soft: #eceafe;
+  --portfolio-border: #dedde5;
   --portfolio-paper: #ffffff;
-  --portfolio-surface: #f1f3f7;
+  --portfolio-surface: #efeee9;
+  --portfolio-background: #f8f7f3;
+  --portfolio-dark: #14131d;
   color: var(--portfolio-text);
-  background: #f7f8fb;
+  background: var(--portfolio-background);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -20,8 +23,15 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
+  background: var(--portfolio-background);
 }
 
 a {
   color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }

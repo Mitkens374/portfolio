@@ -52,28 +52,59 @@ function App() {
       <Box component="main">
         <Box component="section" className="hero-section" aria-labelledby="hero-title">
           <Container>
-            <Stack spacing={3} maxWidth={850}>
-              <Typography color="primary.main" fontWeight={700}>
-                {content.hero.eyebrow}
-              </Typography>
+            <Box className="hero-layout">
+              <Stack spacing={3} className="hero-copy">
+                <Typography className="hero-eyebrow">
+                  <span aria-hidden="true" />
+                  {content.hero.eyebrow}
+                </Typography>
 
-              <Typography id="hero-title" variant="h1">
-                {content.hero.title}
-              </Typography>
+                <Typography id="hero-title" variant="h1">
+                  {content.hero.title}
+                </Typography>
 
-              <Typography variant="body1" color="text.secondary" maxWidth={680}>
-                {content.hero.introduction}
-              </Typography>
+                <Typography variant="body1" color="text.secondary" maxWidth={650}>
+                  {content.hero.introduction}
+                </Typography>
 
-              <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5}>
-                <Button variant="contained" href="#projects">
-                  {content.hero.projectsCta}
-                </Button>
-                <Button variant="outlined" href="#contact">
-                  {content.hero.contactCta}
-                </Button>
+                <Stack
+                  direction={{ xs: 'column', sm: 'row' }}
+                  spacing={1.5}
+                  className="hero-actions"
+                >
+                  <Button variant="contained" href="#projects">
+                    {content.hero.projectsCta}
+                    <span aria-hidden="true">↘</span>
+                  </Button>
+                  <Button variant="outlined" href="#contact">
+                    {content.hero.contactCta}
+                  </Button>
+                </Stack>
+
+                <Box className="hero-meta">
+                  <Typography>{content.identity.role}</Typography>
+                  <Typography>{content.identity.location}</Typography>
+                </Box>
               </Stack>
-            </Stack>
+
+              <Box className="hero-visual" aria-hidden="true">
+                <Box className="visual-grid">
+                  <span className="visual-orbit visual-orbit--outer" />
+                  <span className="visual-orbit visual-orbit--inner" />
+                  <span className="visual-core">ML</span>
+                  <span className="tech-node tech-node--python">Python</span>
+                  <span className="tech-node tech-node--aws">AWS</span>
+                  <span className="tech-node tech-node--iot">IoT</span>
+                  <span className="tech-node tech-node--react">React</span>
+                  <span className="visual-coordinate visual-coordinate--top">
+                    CLOUD / BACKEND
+                  </span>
+                  <span className="visual-coordinate visual-coordinate--bottom">
+                    SYSTEM NODE / 01
+                  </span>
+                </Box>
+              </Box>
+            </Box>
           </Container>
         </Box>
 
@@ -114,11 +145,11 @@ function App() {
           </Typography>
 
           <Box className="projects-grid">
-            {content.projects.items.map((project) => (
+            {content.projects.items.map((project, index) => (
               <Box
                 component="article"
                 key={project.title}
-                className={`project-card${project.featured ? ' project-card--featured' : ''}`}
+                className={`project-card${project.featured ? ' project-card--featured' : ''}${index === 0 ? ' project-card--lead' : ''}`}
               >
                 <Stack spacing={2} height="100%">
                   <Box>
@@ -173,9 +204,9 @@ function App() {
                           href={link.href}
                           target="_blank"
                           rel="noreferrer"
-                          fontWeight={700}
+                          className="project-link"
                         >
-                          {link.label}
+                          {link.label} <span aria-hidden="true">↗</span>
                         </Link>
                       ))}
                     </Stack>
@@ -194,6 +225,7 @@ function App() {
           <Stack spacing={2}>
             {content.education.items.map((item) => (
               <Box key={item.institution} className="education-card">
+                <span className="education-mark" aria-hidden="true" />
                 <Stack
                   direction={{ xs: 'column', sm: 'row' }}
                   justifyContent="space-between"
@@ -244,7 +276,7 @@ function App() {
           <Box className="footer-content">
             <Box>
               <Typography variant="h2">{content.footer.heading}</Typography>
-              <Typography color="text.secondary" mt={2} maxWidth={600}>
+              <Typography className="footer-message" mt={2} maxWidth={600}>
                 {content.footer.message}
               </Typography>
             </Box>
@@ -254,7 +286,10 @@ function App() {
                 <Typography className="footer-label">
                   {content.footer.emailLabel}
                 </Typography>
-                <Link href={`mailto:${content.contact.email}`}>
+                <Link
+                  href={`mailto:${content.contact.email}`}
+                  className="footer-email"
+                >
                   {content.contact.email}
                 </Link>
               </Box>
@@ -263,11 +298,21 @@ function App() {
                   {content.footer.linksLabel}
                 </Typography>
                 <Stack direction="row" spacing={2}>
-                  <Link href={content.contact.github} target="_blank" rel="noreferrer">
-                    GitHub
+                  <Link
+                    href={content.contact.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="footer-social"
+                  >
+                    GitHub <span aria-hidden="true">↗</span>
                   </Link>
-                  <Link href={content.contact.website} target="_blank" rel="noreferrer">
-                    Website
+                  <Link
+                    href={content.contact.website}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="footer-social"
+                  >
+                    Website <span aria-hidden="true">↗</span>
                   </Link>
                 </Stack>
               </Box>

@@ -62,11 +62,19 @@ export function Header({
 
   return (
     <>
-      <AppBar className="site-header" position="sticky" elevation={0}>
+      <AppBar
+        className="site-header"
+        position="sticky"
+        elevation={0}
+        color="primary"
+      >
         <Container>
           <Toolbar disableGutters className="site-toolbar">
             <Link href="#top" underline="none" className="wordmark">
-              {content.identity.shortName}
+              <span className="wordmark-name">{content.identity.name}</span>
+              <span className="wordmark-role">
+                {content.identity.role}
+              </span>
             </Link>
 
             <Box
@@ -117,9 +125,10 @@ export function Header({
       >
         <Box className="mobile-menu">
           <Stack direction="row" justifyContent="space-between" alignItems="center">
-            <Typography fontWeight={750}>
-              {content.identity.shortName}
-            </Typography>
+            <Box className="mobile-wordmark">
+              <Typography fontWeight={750}>{content.identity.name}</Typography>
+              <Typography variant="caption">{content.identity.role}</Typography>
+            </Box>
             <IconButton
               onClick={closeMobileMenu}
               aria-label={content.navigation.closeMenuLabel}

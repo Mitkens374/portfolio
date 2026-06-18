@@ -4,42 +4,42 @@ const baseTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#2557d6',
-      dark: '#173a96',
-      light: '#e8efff',
+      main: '#5b4ff7',
+      dark: '#3d32cc',
+      light: '#eceafe',
       contrastText: '#ffffff',
     },
     background: {
-      default: '#f7f8fb',
+      default: '#f8f7f3',
       paper: '#ffffff',
     },
     text: {
-      primary: '#172033',
-      secondary: '#5d6678',
+      primary: '#171725',
+      secondary: '#676678',
     },
-    divider: '#e1e5ec',
+    divider: '#dedde5',
   },
   shape: {
     borderRadius: 12,
   },
   typography: {
     fontFamily:
-      'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      'Inter, Aptos, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
     h1: {
-      fontWeight: 700,
-      fontSize: 'clamp(2.5rem, 7vw, 4.75rem)',
+      fontWeight: 750,
+      fontSize: 'clamp(3rem, 7vw, 5.65rem)',
+      lineHeight: 0.98,
+      letterSpacing: '-0.06em',
+    },
+    h2: {
+      fontWeight: 740,
+      fontSize: 'clamp(2.15rem, 4vw, 3.4rem)',
       lineHeight: 1.05,
       letterSpacing: '-0.045em',
     },
-    h2: {
-      fontWeight: 700,
-      fontSize: 'clamp(2rem, 4vw, 3rem)',
-      lineHeight: 1.12,
-      letterSpacing: '-0.035em',
-    },
     h3: {
-      fontWeight: 650,
-      letterSpacing: '-0.02em',
+      fontWeight: 700,
+      letterSpacing: '-0.025em',
     },
     body1: {
       fontSize: '1.0625rem',
@@ -61,8 +61,8 @@ const baseTheme = createTheme({
           minWidth: 320,
         },
         '::selection': {
-          color: '#172033',
-          backgroundColor: '#cbd9ff',
+          color: '#171725',
+          backgroundColor: '#d9d5ff',
         },
       },
     },
@@ -73,8 +73,12 @@ const baseTheme = createTheme({
       styleOverrides: {
         root: {
           borderRadius: 999,
-          paddingInline: 20,
-          minHeight: 44,
+          paddingInline: 23,
+          minHeight: 48,
+          transition: 'transform 160ms ease, box-shadow 160ms ease',
+          '&:hover': {
+            transform: 'translateY(-2px)',
+          },
         },
       },
     },

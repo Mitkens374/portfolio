@@ -5,13 +5,13 @@ export const sk: PortfolioContent = {
   seo: {
     title: 'Michal Lešo',
     description:
-      'Portfólio Michala Leša, junior backend a cloud developera so zameraním na AWS, Python, IoT a React.',
+      'Portfólio Michala Leša, backend a cloud developera so zameraním na AWS, Python, IoT a React.',
   },
   identity: {
     name: 'Ing. Michal Lešo',
     shortName: 'Michal Lešo',
-    role: 'Junior Backend / Cloud Developer',
-    location: 'Michaľany, Slovensko',
+    role: 'Backend / Cloud Developer',
+    location: 'Košice, Slovensko',
   },
   navigation: {
     ariaLabel: 'Hlavná navigácia',
