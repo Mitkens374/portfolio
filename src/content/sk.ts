@@ -3,7 +3,7 @@ import type { PortfolioContent } from '../types/portfolio'
 export const sk: PortfolioContent = {
   locale: 'sk',
   seo: {
-    title: 'Michal Lešo | Backend & Cloud Developer',
+    title: 'Michal Lešo',
     description:
       'Portfólio Michala Leša, junior backend a cloud developera so zameraním na AWS, Python, IoT a React.',
   },
@@ -16,6 +16,8 @@ export const sk: PortfolioContent = {
   navigation: {
     ariaLabel: 'Hlavná navigácia',
     languageLabel: 'Vybrať jazyk',
+    openMenuLabel: 'Otvoriť navigačné menu',
+    closeMenuLabel: 'Zavrieť navigačné menu',
     items: [
       { label: 'O mne', href: '#about' },
       { label: 'Zručnosti', href: '#skills' },
@@ -197,7 +199,7 @@ export const sk: PortfolioContent = {
         ],
         links: [
           {
-            label: 'Zahrať na itch.io',
+            label: 'Hra dostupná na itch.io',
             href: 'https://fifinka.itch.io/truths-last-line',
           },
         ],

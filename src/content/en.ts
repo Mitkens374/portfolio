@@ -3,7 +3,7 @@ import type { PortfolioContent } from '../types/portfolio'
 export const en: PortfolioContent = {
   locale: 'en',
   seo: {
-    title: 'Michal Lešo | Backend & Cloud Developer',
+    title: 'Michal Lešo',
     description:
       'Portfolio of Michal Lešo, a junior backend and cloud developer focused on AWS, Python, IoT and React.',
   },
@@ -16,6 +16,8 @@ export const en: PortfolioContent = {
   navigation: {
     ariaLabel: 'Main navigation',
     languageLabel: 'Select language',
+    openMenuLabel: 'Open navigation menu',
+    closeMenuLabel: 'Close navigation menu',
     items: [
       { label: 'About', href: '#about' },
       { label: 'Skills', href: '#skills' },
@@ -197,7 +199,7 @@ export const en: PortfolioContent = {
         ],
         links: [
           {
-            label: 'Play on itch.io',
+            label: 'Game available on itch.io',
             href: 'https://fifinka.itch.io/truths-last-line',
           },
         ],

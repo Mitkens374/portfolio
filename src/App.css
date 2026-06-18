@@ -4,7 +4,7 @@
 
 .site-header {
   color: var(--portfolio-text);
-  background-color: rgb(247 248 251 / 88%);
+  background-color: rgb(247 248 251 / 90%);
   border-bottom: 1px solid var(--portfolio-border);
   backdrop-filter: blur(14px);
 }
@@ -12,29 +12,281 @@
 .site-toolbar {
   min-height: 72px;
   justify-content: space-between;
-  gap: 24px;
+  gap: 28px;
 }
 
 .wordmark {
+  flex-shrink: 0;
   color: var(--portfolio-text);
   font-size: 1rem;
   font-weight: 750;
   letter-spacing: -0.02em;
 }
 
-.foundation-preview {
+.desktop-navigation {
+  display: flex;
+  justify-content: center;
+  gap: clamp(16px, 2vw, 28px);
+  margin-left: auto;
+}
+
+.desktop-navigation a {
+  color: var(--portfolio-muted);
+  font-size: 0.9rem;
+  font-weight: 650;
+  transition:
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.desktop-navigation a:hover,
+.desktop-navigation a:focus-visible {
+  color: var(--portfolio-primary);
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.language-picker .MuiToggleButton-root {
+  min-width: 42px;
+  border-color: var(--portfolio-border);
+  color: var(--portfolio-muted);
+  font-size: 0.75rem;
+  font-weight: 750;
+}
+
+.language-picker .Mui-selected {
+  color: var(--portfolio-primary);
+  background: var(--portfolio-primary-soft);
+}
+
+.menu-button {
+  display: none;
+}
+
+.menu-icon {
+  display: grid;
+  width: 22px;
+  gap: 4px;
+}
+
+.menu-icon span {
+  display: block;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.mobile-menu {
+  width: min(84vw, 340px);
+  min-height: 100%;
+  padding: 24px;
+}
+
+.mobile-navigation {
+  display: grid;
+  gap: 4px;
+  margin-block: 40px;
+}
+
+.mobile-navigation a {
+  padding-block: 11px;
+  color: var(--portfolio-text);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.hero-section {
   display: flex;
   align-items: center;
   min-height: calc(100vh - 73px);
-  padding-block: clamp(72px, 12vw, 144px);
+  padding-block: clamp(80px, 12vw, 144px);
 }
 
-@media (max-width: 600px) {
+.content-section {
+  padding-block: clamp(72px, 10vw, 120px);
+  scroll-margin-top: 72px;
+}
+
+.content-section--muted {
+  background: var(--portfolio-surface);
+  border-block: 1px solid var(--portfolio-border);
+}
+
+.section-title {
+  margin-bottom: clamp(36px, 6vw, 64px);
+}
+
+.section-introduction,
+.about-copy {
+  max-width: 780px;
+}
+
+.section-introduction {
+  margin-top: -32px;
+  margin-bottom: 40px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.skill-group,
+.project-card,
+.education-card,
+.language-card {
+  background: var(--portfolio-paper);
+  border: 1px solid var(--portfolio-border);
+  border-radius: 16px;
+}
+
+.skill-group {
+  padding: 28px;
+}
+
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  padding: 28px;
+}
+
+.project-card--featured {
+  border-color: rgb(37 87 214 / 35%);
+}
+
+.project-description {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.project-description li {
+  padding-left: 4px;
+}
+
+.education-card {
+  padding: 32px;
+}
+
+.education-meta {
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.languages-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.language-card {
+  padding: 28px;
+}
+
+.site-footer {
+  padding-block: clamp(72px, 10vw, 112px) 32px;
+  scroll-margin-top: 72px;
+  background: #eef1f7;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(260px, 0.6fr);
+  gap: 64px;
+}
+
+.footer-links {
+  display: grid;
+  align-content: start;
+  gap: 28px;
+}
+
+.footer-label {
+  margin-bottom: 8px;
+  color: var(--portfolio-muted);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.footer-links a {
+  font-weight: 700;
+}
+
+.copyright {
+  padding-top: 56px;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 1000px) {
+  .desktop-navigation,
+  .desktop-language-picker {
+    display: none;
+  }
+
+  .menu-button {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 700px) {
   .site-toolbar {
     min-height: 64px;
   }
 
-  .foundation-preview {
+  .hero-section {
     min-height: calc(100vh - 65px);
+  }
+
+  .content-section,
+  .site-footer {
+    scroll-margin-top: 64px;
+  }
+
+  .skills-grid,
+  .projects-grid,
+  .languages-grid,
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .section-introduction {
+    margin-top: -20px;
+  }
+
+  .education-meta {
+    text-align: left;
+  }
+
+  .footer-content {
+    gap: 48px;
+  }
+}
+
+@media (max-width: 420px) {
+  .skill-group,
+  .project-card,
+  .education-card,
+  .language-card {
+    padding: 22px;
+  }
+
+  .project-card .MuiStack-root:first-child > div:first-child > .MuiStack-root {
+    flex-direction: column;
   }
 }

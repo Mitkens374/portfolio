@@ -54,6 +54,8 @@ export type PortfolioContent = {
   navigation: {
     ariaLabel: string
     languageLabel: string
+    openMenuLabel: string
+    closeMenuLabel: string
     items: NavigationItem[]
   }
   hero: {

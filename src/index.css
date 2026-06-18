@@ -1,6 +1,11 @@
 :root {
   --portfolio-text: #172033;
+  --portfolio-muted: #5d6678;
+  --portfolio-primary: #2557d6;
+  --portfolio-primary-soft: #e8efff;
   --portfolio-border: #e1e5ec;
+  --portfolio-paper: #ffffff;
+  --portfolio-surface: #f1f3f7;
   color: var(--portfolio-text);
   background: #f7f8fb;
   font-synthesis: none;
